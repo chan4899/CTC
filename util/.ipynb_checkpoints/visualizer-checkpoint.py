@@ -186,9 +186,14 @@ class Visualizer():
         """
         if not hasattr(self, 'plot_data'):
             self.plot_data = {'X': [], 'Y': [], 'legend': list(losses.keys())}
+            self.ind_losses = {}
+            for k in self.plot_data['legend']:
+                self.ind_losses[k] = []
         self.plot_data['X'].append(epoch + counter_ratio)
         self.plot_data['Y'].append([losses[k] for k in self.plot_data['legend']])
         try:
+#             import ipdb; ipdb.set_trace();
+
             self.vis.line(
                 X=np.stack([np.array(self.plot_data['X'])] * len(self.plot_data['legend']), 1),
                 Y=np.array(self.plot_data['Y']),
@@ -197,7 +202,18 @@ class Visualizer():
                     'legend': self.plot_data['legend'],
                     'xlabel': 'epoch',
                     'ylabel': 'loss'},
-                win=self.display_id)
+                win=self.display_id)  
+            for i, k in enumerate(self.plot_data['legend']):
+                self.ind_losses[k].append(losses[k])
+                self.vis.line(
+                    X=np.array(self.plot_data['X']),
+                    Y=np.array(self.ind_losses[k]),
+                    opts={
+                        'title': self.name + ' loss over time',
+                        'legend': [k],
+                        'xlabel': 'epoch',
+                        'ylabel': '{}'.format(k)},
+                    win=self.display_id + i + 3)
         except VisdomExceptionBase:
             self.create_visdom_connections()
 

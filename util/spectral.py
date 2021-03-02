@@ -14,6 +14,7 @@ def l2normalize(v, eps=1e-12):
 class SpectralNorm(nn.Module):
     def __init__(self, module, name='weight', power_iterations=1):
         super(SpectralNorm, self).__init__()
+        print("Spectral layer initialized")
         self.module = module
         self.name = name
         self.power_iterations = power_iterations
