@@ -42,3 +42,7 @@ test/data/legacy_serialized.pt
 *~
 .idea
 *.mp4
+*.ipynb-checkpoints/*
+*/*.ipynb-checkpoints/*
+*/**/*.ipynb-checkpoints/*
+
