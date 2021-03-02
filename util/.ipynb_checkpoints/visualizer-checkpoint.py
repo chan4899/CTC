@@ -193,6 +193,7 @@ class Visualizer():
         self.plot_data['Y'].append([losses[k] for k in self.plot_data['legend']])
         try:
 #             import ipdb; ipdb.set_trace();
+
             self.vis.line(
                 X=np.stack([np.array(self.plot_data['X'])] * len(self.plot_data['legend']), 1),
                 Y=np.array(self.plot_data['Y']),
@@ -201,7 +202,7 @@ class Visualizer():
                     'legend': self.plot_data['legend'],
                     'xlabel': 'epoch',
                     'ylabel': 'loss'},
-                win=self.display_id)
+                win=self.display_id)  
             for i, k in enumerate(self.plot_data['legend']):
                 self.ind_losses[k].append(losses[k])
                 self.vis.line(
