@@ -117,7 +117,7 @@ def init_net(net, init_type='normal', init_gain=0.02, gpu_ids=[]):
     return net
 
 
-def define_G(input_nc, output_nc, ngf, netG, norm='batch', use_dropout=False, init_type='normal', init_gain=0.02, gpu_ids=[], use_sa=False):
+def define_G(input_nc, output_nc, ngf, netG, norm='batch', use_dropout=False, init_type='normal', init_gain=0.02, gpu_ids=[], use_sa="no"):
     """Create a generator
 
     Parameters:
@@ -160,7 +160,7 @@ def define_G(input_nc, output_nc, ngf, netG, norm='batch', use_dropout=False, in
     return init_net(net, init_type, init_gain, gpu_ids)
 
 
-def define_D(input_nc, ndf, netD, n_layers_D=3, norm='batch', init_type='normal', init_gain=0.02, gpu_ids=[], use_sa=False):
+def define_D(input_nc, ndf, netD, n_layers_D=3, norm='batch', init_type='normal', init_gain=0.02, gpu_ids=[], use_sa="no"):
     """Create a discriminator
 
     Parameters:
@@ -230,6 +230,7 @@ class GANLoss(nn.Module):
         self.register_buffer('fake_label', torch.tensor(target_fake_label))
         self.gan_mode = gan_mode
         if gan_mode == 'lsgan':
+            print("ganmode", gan_mode)
             self.loss = nn.MSELoss()
         elif gan_mode == 'vanilla':
             self.loss = nn.BCEWithLogitsLoss()
@@ -437,7 +438,7 @@ class ResnetBlock(nn.Module):
 class UnetGenerator(nn.Module):
     """Create a Unet-based generator"""
 
-    def __init__(self, input_nc, output_nc, num_downs, ngf=64, norm_layer=nn.BatchNorm2d, use_dropout=False, use_sa=False):
+    def __init__(self, input_nc, output_nc, num_downs, ngf=64, norm_layer=nn.BatchNorm2d, use_dropout=False, use_sa="no"):
         """Construct a Unet generator
         Parameters:
             input_nc (int)  -- the number of channels in input images
@@ -456,10 +457,10 @@ class UnetGenerator(nn.Module):
         for i in range(num_downs - 5):          # add intermediate layers with ngf * 8 filters
             unet_block = UnetSkipConnectionBlock(ngf * 8, ngf * 8, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_dropout=use_dropout)
         # gradually reduce the number of filters from ngf * 8 to ngf
-        unet_block = UnetSkipConnectionBlock(ngf * 4, ngf * 8, input_nc=None, submodule=unet_block, norm_layer=norm_layer)
-        unet_block = UnetSkipConnectionBlock(ngf * 2, ngf * 4, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_sa=use_sa)
-        unet_block = UnetSkipConnectionBlock(ngf, ngf * 2, input_nc=None, submodule=unet_block, norm_layer=norm_layer)
-        self.model = UnetSkipConnectionBlock(output_nc, ngf, input_nc=input_nc, submodule=unet_block, outermost=True, norm_layer=norm_layer)  # add the outermost layer
+        unet_block = UnetSkipConnectionBlock(ngf * 4, ngf * 8, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_sa="layer_4" in use_sa)
+        unet_block = UnetSkipConnectionBlock(ngf * 2, ngf * 4, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_sa="layer_3" in use_sa)
+        unet_block = UnetSkipConnectionBlock(ngf, ngf * 2, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_sa="layer_2" in use_sa)
+        self.model = UnetSkipConnectionBlock(output_nc, ngf, input_nc=input_nc, submodule=unet_block, outermost=True, norm_layer=norm_layer, use_sa="layer_1" in use_sa)  # add the outermost layer
 
     def forward(self, input):
         """Standard forward"""
@@ -508,6 +509,11 @@ class UnetSkipConnectionBlock(nn.Module):
                                         padding=1))
             down = [downconv]
             up = [uprelu, upconv, nn.Tanh()]
+            
+            if use_sa:
+                self_attn = Self_Attn(inner_nc, 'relu')
+                down = [downconv, self_attn]
+                
             model = down + [submodule] + up
         elif innermost:
             upconv = SpectralNorm(nn.ConvTranspose2d(inner_nc, outer_nc,
@@ -544,7 +550,7 @@ class UnetSkipConnectionBlock(nn.Module):
 class NLayerDiscriminator(nn.Module):
     """Defines a PatchGAN discriminator"""
 
-    def __init__(self, input_nc, ndf=64, n_layers=3, norm_layer=nn.BatchNorm2d, use_sa=False):
+    def __init__(self, input_nc, ndf=64, n_layers=3, norm_layer=nn.BatchNorm2d, use_sa="no"):
         """Construct a PatchGAN discriminator
 
         Parameters:
@@ -563,6 +569,8 @@ class NLayerDiscriminator(nn.Module):
         padw = 1
         sequence = [SpectralNorm(nn.Conv2d(input_nc, ndf, kernel_size=kw, 
                                            stride=2, padding=padw)), nn.LeakyReLU(0.2, True)]
+        if use_sa=="layer_1":
+            sequence += [Self_Attn(ndf, "relu")]
         nf_mult = 1
         nf_mult_prev = 1
         for n in range(1, n_layers):  # gradually increase the number of filters
@@ -574,8 +582,10 @@ class NLayerDiscriminator(nn.Module):
                 norm_layer(ndf * nf_mult),
                 nn.LeakyReLU(0.2, True)
             ]
+            if n==1 and use_sa=="layer_2":
+                sequence += [Self_Attn(ndf * nf_mult, "relu")]
         
-        if use_sa:
+        if use_sa=="layer_3":
             sequence += [Self_Attn(ndf * nf_mult, "relu")]
         nf_mult_prev = nf_mult
         nf_mult = min(2 ** n_layers, 8)
@@ -585,6 +595,9 @@ class NLayerDiscriminator(nn.Module):
             norm_layer(ndf * nf_mult),
             nn.LeakyReLU(0.2, True)
         ]
+        
+        if use_sa=="layer_4":
+            sequence += [Self_Attn(ndf * nf_mult, "relu")]
         
         sequence += [SpectralNorm(nn.Conv2d(ndf * nf_mult, 1, kernel_size=kw, 
                                             stride=1, padding=padw))]  # output 1 channel prediction map

@@ -2,6 +2,11 @@ from .pix2pix_model import Pix2PixModel
 import torch
 from skimage import color  # used for lab2rgb
 import numpy as np
+import warnings
+import torchvision.transforms as transforms
+from pytorch_msssim import ssim
+
+warnings.filterwarnings("ignore")
 
 
 class ColorizationModel(Pix2PixModel):
@@ -45,20 +50,25 @@ class ColorizationModel(Pix2PixModel):
         # specify the images to be visualized.
         self.visual_names = ['real_A', 'real_B_rgb', 'fake_B_rgb']
 
-    def lab2rgb(self, L, AB):
+    def lab2rgb(self, L, AB, whole_batch=False):
         """Convert an Lab tensor image to a RGB numpy output
         Parameters:
             L  (1-channel tensor array): L channel images (range: [-1, 1], torch tensor array)
             AB (2-channel tensor array):  ab channel images (range: [-1, 1], torch tensor array)
-
+            whole_batch (bool): if true, convert whole batch of Lab images to rgb else for a single image
+            
         Returns:
             rgb (RGB numpy image): rgb output images  (range: [0, 255], numpy array)
         """
         AB2 = AB * 110.0
         L2 = (L + 1.0) * 50.0
         Lab = torch.cat([L2, AB2], dim=1)
-        Lab = Lab[0].data.cpu().float().numpy()
-        Lab = np.transpose(Lab.astype(np.float64), (1, 2, 0))
+        if whole_batch:
+            Lab = Lab.data.cpu().float().numpy()
+            Lab = np.transpose(Lab.astype(np.float64), (0, 2, 3, 1))
+        else:
+            Lab = Lab[0].data.cpu().float().numpy()
+            Lab = np.transpose(Lab.astype(np.float64), (1, 2, 0))
         rgb = color.lab2rgb(Lab) * 255
         return rgb
 
@@ -66,3 +76,13 @@ class ColorizationModel(Pix2PixModel):
         """Calculate additional output images for visdom and HTML visualization"""
         self.real_B_rgb = self.lab2rgb(self.real_A, self.real_B)
         self.fake_B_rgb = self.lab2rgb(self.real_A, self.fake_B)
+        
+    def compute_ssim(self):
+        """Calculates SSIM metric and compares real and fake rgb images"""
+        self.real_B_rgb_batch = self.lab2rgb(self.real_A, self.real_B, whole_batch=True)
+        self.fake_B_rgb_batch = self.lab2rgb(self.real_A, self.fake_B, whole_batch=True)
+        
+        self.real_B_rgb_batch = torch.from_numpy(self.real_B_rgb_batch)
+        self.fake_B_rgb_batch = torch.from_numpy(self.fake_B_rgb_batch)
+        return ssim(self.real_B_rgb_batch, self.fake_B_rgb_batch)
+        
