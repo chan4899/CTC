@@ -49,5 +49,4 @@ test/data/legacy_serialized.pt
 */.ipynb_checkpoints/*
 .ipynb_checkpoints/*
 *.ipynb_checkpoints*
-*.txt
 */**/*checkpoint.py

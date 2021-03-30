@@ -1,0 +1,202 @@
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/voc_data/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_01                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: False                         
+                 use_sa_G: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+initialize network with normal
+model [ColorizationModel] was created
+loading the model from /home1/btp/pkb_btp_1/checkpoints/pascal_voc_01/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 41.895 M
+-----------------------------------------------
+creating web directory /home1/btp/pkb_btp_1/results/pascal_voc_01/test_latest
+processing (0000)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2007_000491.jpg']
+processing (0005)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_000365.jpg']
+processing (0010)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_001466.jpg']
+processing (0015)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_002647.jpg']
+processing (0020)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_003467.jpg']
+processing (0025)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_003951.jpg']
+processing (0030)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_004702.jpg']
+processing (0035)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_005404.jpg']
+processing (0040)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_006082.jpg']
+processing (0045)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_007438.jpg']
+processing (0050)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_007585.jpg']
+processing (0055)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_000282.jpg']
+processing (0060)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_001470.jpg']
+processing (0065)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_002086.jpg']
+processing (0070)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_002995.jpg']
+processing (0075)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_004264.jpg']
+processing (0080)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_005300.jpg']
+processing (0085)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_000661.jpg']
+processing (0090)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_001331.jpg']
+processing (0095)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_002479.jpg']
+processing (0100)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_003107.jpg']
+processing (0105)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_003653.jpg']
+processing (0110)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_004537.jpg']
+processing (0115)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_005496.jpg']
+processing (0120)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_006106.jpg']
+processing (0125)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_006518.jpg']
+processing (0130)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_006964.jpg']
+processing (0135)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_000507.jpg']
+processing (0140)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_001375.jpg']
+processing (0145)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_002173.jpg']
+processing (0150)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_003216.jpg']
+processing (0155)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_003977.jpg']
+processing (0160)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_004618.jpg']
+processing (0165)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_005613.jpg']
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/voc_data/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_01                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: False                         
+                 use_sa_G: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+initialize network with normal
+model [ColorizationModel] was created
+loading the model from /home1/btp/pkb_btp_1/checkpoints/pascal_voc_01/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 41.895 M
+-----------------------------------------------
+creating web directory /home1/btp/pkb_btp_1/results/pascal_voc_01/test_latest
+processing (0000)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2007_000491.jpg']
+processing (0005)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_000365.jpg']
+processing (0010)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_001466.jpg']
+processing (0015)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_002647.jpg']
+processing (0020)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_003467.jpg']
+processing (0025)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_003951.jpg']
+processing (0030)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_004702.jpg']
+processing (0035)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_005404.jpg']
+processing (0040)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_006082.jpg']
+processing (0045)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_007438.jpg']
+processing (0050)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2008_007585.jpg']
+processing (0055)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_000282.jpg']
+processing (0060)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_001470.jpg']
+processing (0065)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_002086.jpg']
+processing (0070)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_002995.jpg']
+processing (0075)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_004264.jpg']
+processing (0080)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2009_005300.jpg']
+processing (0085)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_000661.jpg']
+processing (0090)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_001331.jpg']
+processing (0095)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_002479.jpg']
+processing (0100)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_003107.jpg']
+processing (0105)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_003653.jpg']
+processing (0110)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_004537.jpg']
+processing (0115)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_005496.jpg']
+processing (0120)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_006106.jpg']
+processing (0125)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_006518.jpg']
+processing (0130)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2010_006964.jpg']
+processing (0135)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_000507.jpg']
+processing (0140)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_001375.jpg']
+processing (0145)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_002173.jpg']
+processing (0150)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_003216.jpg']
+processing (0155)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_003977.jpg']
+processing (0160)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_004618.jpg']
+processing (0165)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_005613.jpg']
+processing (0170)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2011_006820.jpg']
+processing (0175)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2012_001380.jpg']
+processing (0180)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2012_001904.jpg']
+processing (0185)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2012_002494.jpg']
+processing (0190)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2012_003197.jpg']
+processing (0195)-th image... ['/home1/btp/pkb_btp_1/data/voc_data/test/2012_003798.jpg']
+[tensor(0.8559, dtype=torch.float64), tensor(0.8794, dtype=torch.float64), tensor(0.8982, dtype=torch.float64), tensor(0.8700, dtype=torch.float64), tensor(0.8569, dtype=torch.float64), tensor(0.8704, dtype=torch.float64), tensor(0.8663, dtype=torch.float64), tensor(0.9068, dtype=torch.float64), tensor(0.8631, dtype=torch.float64), tensor(0.8383, dtype=torch.float64), tensor(0.8855, dtype=torch.float64), tensor(0.8046, dtype=torch.float64), tensor(0.8349, dtype=torch.float64), tensor(0.7954, dtype=torch.float64), tensor(0.8778, dtype=torch.float64), tensor(0.9275, dtype=torch.float64), tensor(0.8503, dtype=torch.float64), tensor(0.8658, dtype=torch.float64), tensor(0.8549, dtype=torch.float64), tensor(0.8816, dtype=torch.float64), tensor(0.8478, dtype=torch.float64), tensor(0.8683, dtype=torch.float64), tensor(0.8805, dtype=torch.float64), tensor(0.6978, dtype=torch.float64), tensor(0.8435, dtype=torch.float64), tensor(0.8816, dtype=torch.float64), tensor(0.8811, dtype=torch.float64), tensor(0.6756, dtype=torch.float64), tensor(0.9022, dtype=torch.float64), tensor(0.7790, dtype=torch.float64), tensor(0.7565, dtype=torch.float64), tensor(0.6553, dtype=torch.float64), tensor(0.8793, dtype=torch.float64), tensor(0.8739, dtype=torch.float64), tensor(0.8916, dtype=torch.float64), tensor(0.7834, dtype=torch.float64), tensor(0.8755, dtype=torch.float64), tensor(0.8868, dtype=torch.float64), tensor(0.8793, dtype=torch.float64), tensor(0.8671, dtype=torch.float64), tensor(0.8463, dtype=torch.float64), tensor(0.8391, dtype=torch.float64), tensor(0.8464, dtype=torch.float64), tensor(0.8675, dtype=torch.float64), tensor(0.8081, dtype=torch.float64), tensor(0.8208, dtype=torch.float64), tensor(0.8427, dtype=torch.float64), tensor(0.9033, dtype=torch.float64), tensor(0.8133, dtype=torch.float64), tensor(0.8795, dtype=torch.float64), tensor(0.8080, dtype=torch.float64), tensor(0.8105, dtype=torch.float64), tensor(0.8217, dtype=torch.float64), tensor(0.8848, dtype=torch.float64), tensor(0.8595, dtype=torch.float64), tensor(0.9291, dtype=torch.float64), tensor(0.8526, dtype=torch.float64), tensor(0.8499, dtype=torch.float64), tensor(0.5365, dtype=torch.float64), tensor(0.8120, dtype=torch.float64), tensor(0.8360, dtype=torch.float64), tensor(0.8720, dtype=torch.float64), tensor(0.9142, dtype=torch.float64), tensor(0.6627, dtype=torch.float64), tensor(0.8385, dtype=torch.float64), tensor(0.8614, dtype=torch.float64), tensor(0.8350, dtype=torch.float64), tensor(0.8486, dtype=torch.float64), tensor(0.9110, dtype=torch.float64), tensor(0.7632, dtype=torch.float64), tensor(0.7561, dtype=torch.float64), tensor(0.8958, dtype=torch.float64), tensor(0.8862, dtype=torch.float64), tensor(0.8697, dtype=torch.float64), tensor(0.8835, dtype=torch.float64), tensor(0.8799, dtype=torch.float64), tensor(0.7457, dtype=torch.float64), tensor(0.9013, dtype=torch.float64), tensor(0.8912, dtype=torch.float64), tensor(0.8128, dtype=torch.float64), tensor(0.8942, dtype=torch.float64), tensor(0.8823, dtype=torch.float64), tensor(0.7560, dtype=torch.float64), tensor(0.8853, dtype=torch.float64), tensor(0.8482, dtype=torch.float64), tensor(0.8823, dtype=torch.float64), tensor(0.9029, dtype=torch.float64), tensor(0.8717, dtype=torch.float64), tensor(0.8763, dtype=torch.float64), tensor(0.8520, dtype=torch.float64), tensor(0.8844, dtype=torch.float64), tensor(0.8871, dtype=torch.float64), tensor(0.8990, dtype=torch.float64), tensor(0.8474, dtype=torch.float64), tensor(0.8687, dtype=torch.float64), tensor(0.7786, dtype=torch.float64), tensor(0.8895, dtype=torch.float64), tensor(0.8779, dtype=torch.float64), tensor(0.9132, dtype=torch.float64), tensor(0.9073, dtype=torch.float64), tensor(0.8943, dtype=torch.float64), tensor(0.6959, dtype=torch.float64), tensor(0.8926, dtype=torch.float64), tensor(0.9120, dtype=torch.float64), tensor(0.8397, dtype=torch.float64), tensor(0.8284, dtype=torch.float64), tensor(0.7934, dtype=torch.float64), tensor(0.9255, dtype=torch.float64), tensor(0.8586, dtype=torch.float64), tensor(0.8598, dtype=torch.float64), tensor(0.8909, dtype=torch.float64), tensor(0.9025, dtype=torch.float64), tensor(0.8152, dtype=torch.float64), tensor(0.8875, dtype=torch.float64), tensor(0.9282, dtype=torch.float64), tensor(0.8623, dtype=torch.float64), tensor(0.8865, dtype=torch.float64), tensor(0.8745, dtype=torch.float64), tensor(0.7887, dtype=torch.float64), tensor(0.8705, dtype=torch.float64), tensor(0.8307, dtype=torch.float64), tensor(0.8548, dtype=torch.float64), tensor(0.8902, dtype=torch.float64), tensor(0.8634, dtype=torch.float64), tensor(0.8696, dtype=torch.float64), tensor(0.8787, dtype=torch.float64), tensor(0.6477, dtype=torch.float64), tensor(0.8638, dtype=torch.float64), tensor(0.8955, dtype=torch.float64), tensor(0.8631, dtype=torch.float64), tensor(0.8983, dtype=torch.float64), tensor(0.8737, dtype=torch.float64), tensor(0.9175, dtype=torch.float64), tensor(0.8654, dtype=torch.float64), tensor(0.8150, dtype=torch.float64), tensor(0.8403, dtype=torch.float64), tensor(0.9039, dtype=torch.float64), tensor(0.8870, dtype=torch.float64), tensor(0.8623, dtype=torch.float64), tensor(0.5865, dtype=torch.float64), tensor(0.8841, dtype=torch.float64), tensor(0.8909, dtype=torch.float64), tensor(0.8526, dtype=torch.float64), tensor(0.9093, dtype=torch.float64), tensor(0.9264, dtype=torch.float64), tensor(0.8640, dtype=torch.float64), tensor(0.8146, dtype=torch.float64), tensor(0.8856, dtype=torch.float64), tensor(0.9089, dtype=torch.float64), tensor(0.9096, dtype=torch.float64), tensor(0.8647, dtype=torch.float64), tensor(0.8845, dtype=torch.float64), tensor(0.8907, dtype=torch.float64), tensor(0.8575, dtype=torch.float64), tensor(0.8743, dtype=torch.float64), tensor(0.8129, dtype=torch.float64), tensor(0.9271, dtype=torch.float64), tensor(0.8371, dtype=torch.float64), tensor(0.8839, dtype=torch.float64), tensor(0.7675, dtype=torch.float64), tensor(0.8628, dtype=torch.float64), tensor(0.8608, dtype=torch.float64), tensor(0.8894, dtype=torch.float64), tensor(0.8748, dtype=torch.float64), tensor(0.8483, dtype=torch.float64), tensor(0.8823, dtype=torch.float64), tensor(0.8434, dtype=torch.float64), tensor(0.8931, dtype=torch.float64), tensor(0.9204, dtype=torch.float64), tensor(0.9224, dtype=torch.float64), tensor(0.8267, dtype=torch.float64), tensor(0.7494, dtype=torch.float64), tensor(0.8717, dtype=torch.float64), tensor(0.8438, dtype=torch.float64), tensor(0.9095, dtype=torch.float64), tensor(0.8615, dtype=torch.float64), tensor(0.8555, dtype=torch.float64), tensor(0.7922, dtype=torch.float64), tensor(0.8868, dtype=torch.float64), tensor(0.8772, dtype=torch.float64), tensor(0.8739, dtype=torch.float64), tensor(0.8755, dtype=torch.float64), tensor(0.8494, dtype=torch.float64), tensor(0.8596, dtype=torch.float64), tensor(0.7750, dtype=torch.float64), tensor(0.8120, dtype=torch.float64), tensor(0.8530, dtype=torch.float64), tensor(0.8779, dtype=torch.float64), tensor(0.8838, dtype=torch.float64), tensor(0.8742, dtype=torch.float64), tensor(0.8267, dtype=torch.float64), tensor(0.6478, dtype=torch.float64), tensor(0.8849, dtype=torch.float64), tensor(0.8274, dtype=torch.float64), tensor(0.8682, dtype=torch.float64), tensor(0.8741, dtype=torch.float64), tensor(0.8790, dtype=torch.float64), tensor(0.9037, dtype=torch.float64), tensor(0.8112, dtype=torch.float64), tensor(0.7993, dtype=torch.float64)]
+tensor(170.4794, dtype=torch.float64)
