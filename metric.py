@@ -7,7 +7,7 @@ import torch
 # from skimage.measure import compare_ssim as ssim
 from PIL import Image
 import torchvision.transforms as transforms
-from pytorch_msssim import ssim
+from pytorch_msssim import ssim, ms_ssim
 
 # def calc_ssim(im1, im2):
 #     return ssim(im1, im2, multichannel=True)
