@@ -1,0 +1,454 @@
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_01                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: no                            
+                 use_sa_G: no                            
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_02                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: layer_3                       	[default: no]
+                 use_sa_G: layer_3                       	[default: no]
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Self attention initialized with 256 channels.
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_03                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: no                            
+                 use_sa_G: no                            
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_04                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: layer_3                       	[default: no]
+                 use_sa_G: layer_3                       	[default: no]
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Self attention initialized with 256 channels.
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_05                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: layer_2                       	[default: no]
+                 use_sa_G: layer_2                       	[default: no]
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Self attention initialized with 128 channels.
+Spectral layer initialized
+Spectral layer initialized
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_06                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: layer_2                       	[default: no]
+                 use_sa_G: layer_2                       	[default: no]
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Self attention initialized with 128 channels.
+Spectral layer initialized
+Spectral layer initialized
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_07                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: layer_1                       	[default: no]
+                 use_sa_G: layer_1                       	[default: no]
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Self attention initialized with 64 channels.
+----------------- Options ---------------
+             aspect_ratio: 1                             
+               batch_size: 64                            	[default: 1]
+          checkpoints_dir: /home1/btp/pkb_btp_1/checkpoints
+                crop_size: 128                           	[default: 256]
+                 dataroot: /home1/btp/pkb_btp_1/data/random_video/	[default: None]
+             dataset_mode: colorization                  
+                direction: AtoB                          
+          display_winsize: 512                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 128                           	[default: 512]
+         max_dataset_size: inf                           
+                    model: colorization                  
+               n_layers_D: 3                             
+                     name: pascal_voc_08                 	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      	[default: unet_256]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 10000                         
+              num_threads: 4                             
+                output_nc: 2                             
+                    phase: test                          
+               preprocess: resize_and_crop               	[default: scale_width]
+              results_dir: /home1/btp/pkb_btp_1/results/ 
+           serial_batches: False                         
+                   suffix:                               
+                 use_sa_D: layer_1                       	[default: no]
+                 use_sa_G: layer_1                       	[default: no]
+                  verbose: False                         
+----------------- End -------------------
+dataset [ColorizationDataset] was created
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Spectral layer initialized
+Self attention initialized with 64 channels.
